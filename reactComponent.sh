@@ -42,7 +42,7 @@ fi
 
 FILENAME="$NAME.$EXT"
 echo $FILENAME
-if [ ! -e $FILENAME ]; then
+if [ -e $FILENAME ]; then
 	rm $FILENAME
 fi
 touch $FILENAME
@@ -53,6 +53,7 @@ echo "class $NAME extends React.Component {" >> $FILENAME
 echo "	constructor(props){" >> $FILENAME
 echo "		super(props);" >> $FILENAME
 echo "  }" >> $FILENAME
+echo "" >> $FILENAME
 echo "  render() {" >> $FILENAME
 echo "    return (" >> $FILENAME
 echo "		<div>Hello $NAME</div>" >> $FILENAME
